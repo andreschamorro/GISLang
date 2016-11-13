@@ -68,12 +68,12 @@ class Hospital(Edification):
             hos_temp.edifications[other.key] = [other];
         return hos_temp;
 
-class Comercial(Edification):
+class Commercial(Edification):
     def __init__ (self, x = 0, y = 0):
         self.x = x;
         self.y = y;
-        self.key = 'comercial'
-        self.edifications = {'comercial' : [self]};
+        self.key = 'commercial'
+        self.edifications = {'commercial' : [self]};
     def __add__(self, other):
         hos_temp = self;
         if other.key in hos_temp.edifications:
