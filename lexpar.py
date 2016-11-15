@@ -8,8 +8,6 @@ tokens = [
 
 reserved = {
         'quit': 'QUIT',
-        'for' : 'FOR', 
-        'in'  : 'IN',
         'Point' : 'POINT', 
         'Line'  : 'LINE', 
         'Edification' : 'EDIFICATION',
@@ -84,23 +82,30 @@ def p_statement_expr(p):
 
 def p_expression_edification(p):
     '''expression : EDIFICATION
-                  | EDIFICATION POINT'''
+                  | EDIFICATION POINT
+                  | EDIFICATION LPAREN NAME RPAREN'''
     if len(p) == 2:
         p[0] = gisclass.Edification()
     elif len(p) == 3:
         p[0] = gisclass.Edification(p[2])
+    elif len(p) == 5:
+        p[0] = gisclass.Edification(names[p[3]])
 
 def p_expression_house(p):
     '''expression : HOUSE
-                  | HOUSE POINT'''
+                  | HOUSE POINT
+                  | HOUSE LPAREN NAME RPAREN'''
     if len(p) == 2:
         p[0] = gisclass.House()
     elif len(p) == 3:
         p[0] = gisclass.House(p[2])
+    elif len(p) == 5:
+        p[0] = gisclass.House(names[p[3]])
 
 def p_expression_hospital(p):
     '''expression : HOSPITAL
-                  | HOSPITAL POINT'''
+                  | HOSPITAL POINT
+                  | HOSPITAL LPAREN NAME RPAREN'''
     if len(p) == 2:
         p[0] = gisclass.Hospital()
     elif len(p) == 3:
@@ -108,19 +113,25 @@ def p_expression_hospital(p):
 
 def p_expression_commercial(p):
     '''expression : COMMERCIAL
-                  | COMMERCIAL POINT'''
+                  | COMMERCIAL POINT
+                  | COMMERCIAL LPAREN NAME RPAREN'''
     if len(p) == 2:
         p[0] = gisclass.Commercial()
     elif len(p) == 3:
         p[0] = gisclass.Commercial(p[2])
+    elif len(p) == 5:
+        p[0] = gisclass.Commercial(names[p[3]])
 
 def p_expression_school(p):
     '''expression : SCHOOL
-                  | SCHOOL POINT'''
+                  | SCHOOL POINT
+                  | SCHOOL LPAREN NAME RPAREN'''
     if len(p) == 2:
         p[0] = gisclass.School()
     elif len(p) == 3:
         p[0] = gisclass.School(p[2])
+    elif len(p) == 5:
+        p[0] = gisclass.School(names[p[3]])
 
 def p_expression_region(p):
     '''expression : REGION
@@ -131,7 +142,7 @@ def p_expression_region(p):
     elif len(p) == 3:
         p[0] = gisclass.Region([p[2]])
     elif len(p) == 5:
-        p[0] = gisclass.Region([p[3]])
+        p[0] = gisclass.Region([names[p[3]]])
 
 def p_expression_block(p):
     '''expression : BLOCK
