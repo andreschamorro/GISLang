@@ -33,10 +33,6 @@ Street ( x[ ], y[ ] )
 
 Map ( Edification[ ], Region[ ], WaterBody[ ], Street[ ] )
 
-Control flow statement  
-	For loop:  
-For a certain element type it goes over a set identifying the elements with the desired element type   ( For( House  h1 in  B) ).
-
 Operation and Rules  
 	Arithmetic operations:  
 		+: Every operation in the same type return an array of the same type  
@@ -48,21 +44,27 @@ Operation and Rules
 
 Functions:
 
-list(Type)  
-	Show a list of element and their attributes.  
-perimeter(Type)  
-	Calculate the perimeter of the given region.  
-area(Type)  
-	Calculate the area of the given region.  
-distance(Type, Type)  
-Type(Type)  
-	Return Type.  
-sizeof(Type)
-	Return number of element.  
-Location(Type)  
-	Return mass center coordinate of type.  
 print(Type)  
-	returns the Type information in a certain format.  
+	returns the Type information in a certain format. 
+
+## Language Reference Manual
+
+Command | Parameter | Description
+------- | --------- | -----------
+Edification | Point (x, y) | Defines Edification type
+House | Point (x, y) | Defines Edification type
+School    | Point (x, y) | Defines School type
+Hospital  | Point (x, y) | Defines Hospital type
+Comercial | Point (x, y) | Defines Comercial type
+Region | array of Point | Define a region on map
+Block | array of Edification | Define a urban block on map
+Neighborhood | array of Block | Define a Neighborhood with their Block
+Town | array of Neighborhood | Define a Town
+State | array of Town | Define a state with their Town
+River | array of Point x[], y[] | Define a River on map
+Lake  | array of Point x[] | Define a Lake on map
+Street| array of Point x[], y[] | Define a Street on map
++ | Two types | Return set of elements
 
 ## Credits
 
