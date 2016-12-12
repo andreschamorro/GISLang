@@ -66,6 +66,19 @@ Lake  | array of Point x[] | Define a Lake on map
 Street| array of Point x[], y[] | Define a Street on map
 + | Two types | Return set of elements
 
+## Language development
+
+The translator architecture was built with Python. It uses several functions written in Python that might exist inside the translator 
+or outside it. Inside the translator,  the functions are merely used for token manipulation,  print,  select the right command. After 
+being translated from GISLang execute the functions with the parameters taken from the tokens that got translated from GISLang. The 
+tokens are preselected,  named with their functionality in the program they might get sent to other functions for further use if 
+needed for token manipulation or to do a specific command as defined by the user that created the language.
+
+To create the language,  we used a parser implemented in Python named PLY a package that includes Lex and YACC written in Python. It 
+uses left to right parsing,  and provides most of the original functionalities of said programs,  which include support for empty 
+productions,  precedence rules,  error recovery,  and support for ambiguous grammars. There we defined the characteristics of our 
+language,  its reserved words,  grammatic,  and the general structure for the language.
+
 ## Credits
 
 Kevin Aponte.  
