@@ -192,8 +192,6 @@ class Neighborhoood(Region):
     def __add__(self, other):
         self.Bloques.append(other)
 
-
-
 class Town(Region):
 
     def __init__(self, vecindarios, limites, label = "NONAME"):
@@ -204,7 +202,6 @@ class Town(Region):
     def __add__(self, other):
         self.Vecindarios.append(other)
 
-
 class State(Region):
 
     def __init__(self, ciudades, limites, label = "NONAME"):
@@ -214,7 +211,6 @@ class State(Region):
 
     def __add__(self, other):
         self.Ciudadades.append(other)
-
 
 class Lake(object):
 
