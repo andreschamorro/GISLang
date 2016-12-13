@@ -47,7 +47,7 @@ Functions:
 print(Type)  
 	returns the Type information in a certain format.
 
-## Language Demostration
+## Language Demonstration
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/ZGW8-an3OGU/0.jpg)](http://www.youtube.com/watch?v=ZGW8-an3OGU "GISLang Demo")
 
